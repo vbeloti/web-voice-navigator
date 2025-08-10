@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teste Web Voice Navigator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .test-section {
+        margin: 30px 0;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+      }
+
+      .form-group {
+        margin: 15px 0;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      input,
+      textarea,
+      select {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-bottom: 10px;
+      }
+
+      button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin: 5px;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      .links a {
+        display: inline-block;
+        margin: 10px;
+        color: #007bff;
+        text-decoration: none;
+      }
+
+      .commands {
+        background-color: #f8f9fa;
+        padding: 15px;
+        border-radius: 5px;
+        margin: 20px 0;
+      }
+
+      .command-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      .command-list li {
+        padding: 5px 0;
+        border-bottom: 1px solid #eee;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Teste Web Voice Navigator</h1>
+
+    <div class="commands">
+      <h3>Comandos Disponíveis:</h3>
+      <ul class="command-list">
+        <li><strong>Clicar em [elemento]</strong> - Clica em um botão, link ou elemento clicável</li>
+        <li><strong>Focar em [elemento]</strong> - Foca em um campo de entrada</li>
+        <li><strong>Preencher [campo] com [valor]</strong> - Preenche um campo com texto</li>
+        <li><strong>Rolar para baixo/cima</strong> - Rola a página</li>
+      </ul>
+    </div>
+
+    <div class="test-section">
+      <h2>Formulário de Teste</h2>
+      <form>
+        <div class="form-group">
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" name="nome" placeholder="Digite seu nome" />
+        </div>
+
+        <div class="form-group">
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" placeholder="Digite seu e-mail" />
+        </div>
+
+        <div class="form-group">
+          <label for="mensagem">Mensagem:</label>
+          <textarea id="mensagem" name="mensagem" rows="4" placeholder="Digite sua mensagem"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="categoria">Categoria:</label>
+          <select id="categoria" name="categoria">
+            <option value="">Selecione uma categoria</option>
+            <option value="suporte">Suporte</option>
+            <option value="vendas">Vendas</option>
+            <option value="geral">Geral</option>
+          </select>
+        </div>
+
+        <button type="submit">Enviar</button>
+        <button type="reset">Limpar</button>
+      </form>
+    </div>
+
+    <div class="test-section">
+      <h2>Botões de Teste</h2>
+      <button onclick="alert('Botão Salvar clicado!')">Salvar</button>
+      <button onclick="alert('Botão Cancelar clicado!')">Cancelar</button>
+      <button onclick="alert('Botão Confirmar clicado!')">Confirmar</button>
+      <button onclick="alert('Botão Voltar clicado!')">Voltar</button>
+    </div>
+
+    <div class="test-section">
+      <h2>Links de Teste</h2>
+      <div class="links">
+        <a href="#" onclick="alert('Link Home clicado!')">Home</a>
+        <a href="#" onclick="alert('Link Sobre clicado!')">Sobre</a>
+        <a href="#" onclick="alert('Link Contato clicado!')">Contato</a>
+        <a href="#" onclick="alert('Link Ajuda clicado!')">Ajuda</a>
+      </div>
+    </div>
+
+    <div class="test-section">
+      <h2>Elementos com Labels Associados</h2>
+      <div class="form-group">
+        <label for="produto">Nome do Produto</label>
+        <input type="text" id="produto" placeholder="Ex: Smartphone XYZ" />
+      </div>
+
+      <div class="form-group">
+        <label for="preco">Preço</label>
+        <input type="number" id="preco" placeholder="0.00" step="0.01" />
+      </div>
+
+      <div class="form-group">
+        <label for="descricao">Descrição do Produto</label>
+        <textarea id="descricao" rows="3" placeholder="Descreva o produto..."></textarea>
+      </div>
+    </div>
+
+    <script src="dist/wvn.js"></script>
+
+    <script>
+      console.log('Página carregada. Web Voice Navigator deve estar ativo.');
+
+      setTimeout(() => {
+        const wvnContainer = document.getElementById('wvn-container');
+        if (wvnContainer) {
+          console.log('Web Voice Navigator carregado com sucesso!');
+        } else {
+          console.error('Web Voice Navigator não foi carregado.');
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>
